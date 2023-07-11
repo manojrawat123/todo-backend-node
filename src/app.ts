@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import router from "./routes/web";
 import connectDb from "./db/connect";
+import { createProxyMiddleware } from "http-proxy-middleware";
 
 const app = express();
 
