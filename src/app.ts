@@ -7,29 +7,10 @@ import { createProxyMiddleware } from "http-proxy-middleware";
 
 const app = express();
 
-app.use(cors({
-  
-  "origin": "*",
-  "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
-}));
+app.use(cors());
 
 // Enable CORS for all origins
-app.use(
-  '/',
-  createProxyMiddleware({
-    
-    target: 'https://drab-rose-spider-wrap.cyclic.app',
-    changeOrigin: true,
-    // Add any additional proxy configuration as needed
-  })
-);
 
-app.use((req: Request, res: Response, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  next();
-});
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 connectDb();
