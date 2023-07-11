@@ -6,7 +6,11 @@ import connectDb from "./db/connect";
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  
+  "origin": "*",
+  "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+}));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 connectDb();
