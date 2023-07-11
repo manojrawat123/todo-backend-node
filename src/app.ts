@@ -17,7 +17,8 @@ app.use(cors({
 app.use(
   '/',
   createProxyMiddleware({
-    target: 'https://vast-blue-macaw-fez.cyclic.app/',
+    
+    target: 'https://drab-rose-spider-wrap.cyclic.app',
     changeOrigin: true,
     // Add any additional proxy configuration as needed
   })
