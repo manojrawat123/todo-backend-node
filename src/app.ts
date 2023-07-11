@@ -13,6 +13,15 @@ app.use(cors({
 }));
 
 // Enable CORS for all origins
+app.use(
+  '/',
+  createProxyMiddleware({
+    target: 'https://vast-blue-macaw-fez.cyclic.app/',
+    changeOrigin: true,
+    // Add any additional proxy configuration as needed
+  })
+);
+
 app.use((req: Request, res: Response, next) => {
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
