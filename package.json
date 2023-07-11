@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/app.ts"
+    "start": "nodemon src/app.ts"
   },
   "keywords": [],
   "author": "",
@@ -36,7 +35,9 @@
     "pino-pretty": "^10.0.0",
     "ts-node": "^10.9.1",
     "tsc": "^2.0.4",
-    "typescript": "^5.1.6",
     "yup": "^1.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.1.6"
   }
 }
